@@ -1,0 +1,88 @@
+{% extends "homepage/header.html" %}
+
+{% block content %}
+<div align="center">
+
+    <form class="form-horizontal">
+
+        <div class="form-group">
+
+            <label for="username" class="col-sm-2 control-label">Username</label>
+
+            <div class="col-sm-5">
+
+                <input type="email" class="form-control" id="username" placeholder="Username">
+
+            </div>
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+
+            <div class="col-sm-5">
+
+                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+
+            </div>
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+
+            <div class="col-sm-5">
+
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+
+            </div>
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="confirmPassword" class="col-sm-2 control-label">Confirm Password</label>
+
+            <div class="col-sm-5">
+
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+
+            </div>
+
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-sm-offset-2 col-sm-10">
+
+                <div class="checkbox">
+
+                    <label>
+
+                        <input type="checkbox"> Remember me
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-sm-offset-2 col-sm-10">
+
+                <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Register</button>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}
