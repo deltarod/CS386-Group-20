@@ -1,0 +1,10 @@
+{% extends "homepage/header.html" %}
+
+{% block content %}
+
+    {% for school in object_list %}
+        <h5>School: <a href="/school/{{school.id}}">{{school.schoolName}}</a></h5>
+        <h6>Location: {{school.location}}</h6>
+    {% endfor %}
+
+{% endblock %}

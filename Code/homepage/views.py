@@ -5,3 +5,7 @@ from django.http import HttpResponse
 
 def index(request):
     return render( request, 'homepage/homepage.html')
+
+
+def account(request):
+    return render( request, 'Users/account.html')

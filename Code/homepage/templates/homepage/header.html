@@ -42,7 +42,7 @@
 
                 <li class="nav-item active">
 
-                    <a class="nav-link" href="#">Colleges</a>
+                    <a class="nav-link" href="/school/">Colleges</a>
 
                 </li>
 
@@ -58,17 +58,25 @@
 
               <ul class="navbar-nav">
 
+                  {% if user.is_authenticated %}
+
                   <li class="navbar-nav">
 
-                      <a href="signin" class="btn btn-outline-success my-2 my-sm-0" style="display: none">Account</a>
+                      <a href="/account/" class="btn btn-outline-success my-2 my-sm-0">Account</a>
 
                   </li>
+
+                  {% endif %}
+
+                  {% if user.is_authenticated == False %}
 
                   <li class="navbar-nav" >
 
-                      <a href="signin" class="btn btn-outline-success my-2 my-sm-0">Sign in/Register</a>
+                      <a href="/signin/" class="btn btn-outline-success my-2 my-sm-0">Sign in/Register</a>
 
                   </li>
+
+                  {% endif %}
 
               </ul>
 
