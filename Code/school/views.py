@@ -5,7 +5,3 @@ from .models import School
 
 def index(request):
     return render(request, 'School/schoolIndex.html')
-
-def getSchool(request, School):
-    school = School.objects.get(schoolName=School)
-    return render(request, 'School/school.html', {"school":school})
