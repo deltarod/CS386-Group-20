@@ -4,10 +4,24 @@
 
 <div align="center">
 
-{{ user.username }}
-{{ user.email }}
-{{ user.first_name }}
-{{ user.last_name }}
+    <h3>Username: {{ user.username }}
+    </h3>
+
+    {% if user.email !=  '' %}
+        <h5>Email: {{ user.email }}</h5>
+    {% endif %}
+
+    {% if user.first_name != '' %}
+        <h5>First Name: {{ user.first_name }}</h5>
+    {% endif %}
+
+    {% if user.last_name != '' %}
+        <h5>Last Name: {{ user.last_name }}</h5>
+    {% endif %}
+
+    {% if user.user.profile.college != None %}
+        <h5>College: {{ user.user.profile.college }}</h5>
+    {% endif %}
 
 </div>
 

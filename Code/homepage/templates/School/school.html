@@ -1,0 +1,44 @@
+{% extends "homepage/header.html" %}
+
+{% block content %}
+
+<div align="center">
+
+    <div class= "row">
+
+            <div class="col-sm-2 justify-content-right">
+                {% for profile in school.students.all %}
+                    <p>User: {{profile.user.username}}</p>
+                {% endfor %}
+
+            </div>
+
+        <div class="col-sm-8">
+            <h3>{{ school.schoolName }}</h3>
+        </div>
+
+    {% if user.profile.college == school %}
+
+
+            <div class="col-sm-2 justify-content-center">
+                <a href="/School/leaveSchool/?school={{school.id}}" class="btn btn-outline-success my-2 my-sm-0">Leave School</a>
+            </div>
+
+        {% endif %}
+
+
+
+        {% if user.profile.college != school %}
+
+        <div class="col-sm-2 justify-content-center">
+            <a href="/School/joinSchool/?school={{school.id}}" class="btn btn-outline-success my-2 my-sm-0">Join School</a>
+        </div>
+
+        {% endif %}
+
+
+    </div>
+
+</div>
+
+{% endblock %}

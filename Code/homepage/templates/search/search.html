@@ -1,0 +1,22 @@
+{% extends "homepage/header.html" %}
+
+{% block content %}
+<div align="center">
+
+    {% if college.exists %}
+    <h3>Schools:</h3>
+    {% for uni in college %}
+    <p><a href="/school/{{uni.id}}">{{uni.schoolName}}</a></p>
+    {% endfor %}
+    {% endif %}
+
+    {% if user.exists %}
+    <h3>Users:</h3>
+    {% for student in user %}
+    <p><a href="/user/{{student.username}}">{{student.username}}</a></p>
+    {% endfor %}
+    {% endif %}
+
+</div>
+
+{% endblock %}
