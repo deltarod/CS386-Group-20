@@ -19,8 +19,8 @@
         <h5>Last Name: {{ user.last_name }}</h5>
     {% endif %}
 
-    {% if user.user.profile.college != None %}
-        <h5>College: {{ user.user.profile.college }}</h5>
+    {% if user.profile.college != None %}
+        <h5>College: {{ user.profile.college.schoolName }}</h5>
     {% endif %}
 
 </div>
