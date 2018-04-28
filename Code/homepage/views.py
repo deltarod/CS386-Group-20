@@ -3,8 +3,10 @@ from django.contrib.auth import authenticate, login
 from django.views.generic import View
 from .forms import UserForm
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserChangeForm
 from django.db.models import Q
 from .models import School, Profile
+from .forms import EditProfileForm
 # Create your views here.
 
 
@@ -14,6 +16,20 @@ def index(request):
 
 def account(request):
     return render( request, 'Users/account.html')
+
+
+def edit_account(request):
+    if request.method == 'POST':
+        form = EditProfileForm(request.POST, instance=request.user)
+
+        if form.is_valid():
+            form.save()
+            return redirect('/Users/account')
+
+    else:
+        form = EditProfileForm(instance=request.user)
+        args = {'form': form}
+        return render(request, 'Users/edit_account.html', args)
 
 class UserFormView(View):
     form_class = UserForm

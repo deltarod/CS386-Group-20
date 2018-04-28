@@ -8,6 +8,14 @@
 
     <h3>{{request.user.username}}</h3>
 
+    {% if user.first_name != '' %}
+        <h6>First Name: {{ user.first_name }}</h6>
+    {% endif %}
+
+    {% if user.last_name != '' %}
+        <h6>Last Name: {{ user.last_name }}</h6>
+    {% endif %}
+
     {% if user.email !=  '' %}
         <h6>Email: {{ user.email }}</h6>
     {% endif %}
@@ -15,7 +23,12 @@
     {% if user.profile.college != None %}
         <h6>College: {{ user.profile.college.schoolName }}</h6>
     {% endif %}
-    <a href="/logout/" class="btn btn-outline-success my-2 my-sm-0">logout</a>
+
+
+    <div id="container">
+        <a href="/logout/" class="btn btn-outline-success my-2 my-sm-0">Logout</a>
+        <a href="/account/edit" class="btn btn-outline-success my-2 my-sm-0">Edit Profile</a>
+    </div>
 
 {% endif %}
 

@@ -12,7 +12,10 @@ urlpatterns = [
 
     re_path(r'^(?P<pk>\d+)\/?$', DetailView.as_view(model=Post, template_name="homepage/post.html")),
     re_path('logout/', auth_view.logout, {'template_name': 'homepage/logout.html'}, name='logout'),
-    re_path('account/', views.account, name="account"),
+    re_path('account/$', views.account, name="account"),
+
+    # edit profile
+    re_path('account/edit/$', views.edit_account, name="edit_account"),
 
     # school
     re_path('school/$',ListView.as_view(queryset=School.objects.all()
@@ -37,6 +40,8 @@ urlpatterns = [
 
     # search
     re_path('search/', views.search, name="search")
+
+
 
 
 ]

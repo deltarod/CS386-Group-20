@@ -8,7 +8,7 @@ class TestWebsite(TestCase):
     #Unit test to create a user
     def createUser(self):
         print("Creating a user object")
-        return User.objects.create(username="TestUsername")
+        return User.objects.create(username="TestUsername", first_name="Adam")
 
     #Unit test to create a school
     def createSchool(self):
@@ -28,4 +28,14 @@ class TestWebsite(TestCase):
 
         self.assertIs( profileInstance.college, schoolinstance)
 
+    # Test that a user is able to change their name
+    def testEditAccount(self):
+        print("Creating a user object")
+        profileInstance = self.createUser()
 
+        print("Creating a new name")
+        new_name = "Eve"
+
+        print("Unit test for name change running")
+        profileInstance.first_name = new_name
+        self.assertIs(profileInstance.first_name, new_name)
