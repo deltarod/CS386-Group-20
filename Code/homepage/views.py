@@ -20,7 +20,7 @@ def account(request):
 
 def edit_account(request):
     if request.method == 'POST':
-        form = EditProfileForm(request.POST, instance=request.user)
+        form = EditProfileForm(request.POST, instance=request.profile)
 
         if form.is_valid():
             form.save()

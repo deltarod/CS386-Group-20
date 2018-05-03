@@ -23,7 +23,7 @@ class School(models.Model):
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     bio = models.TextField(max_length=500, blank=True)
     college = models.ForeignKey(School, on_delete=models.CASCADE, related_name="students", blank=True, null=True)
 
